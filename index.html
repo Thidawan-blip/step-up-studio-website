@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP UP DANCE STUDIO</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background: #f9e5f7;
+            color: #17101d;
+        }
+
+        /* เมนูด้านบน */
+        header {
+            background: #160d20;
+            color: white;
+            padding: 18px 4%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #f15bc6;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #ed61c8;
+        }
+
+        .login {
+            background: #e94eb8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        /* ส่วนแบนเนอร์ */
+        .hero {
+            min-height: 450px;
+            padding: 90px 6%;
+            color: white;
+            background:
+                linear-gradient(90deg, rgba(20,5,30,.95), rgba(30,5,40,.35)),
+                url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=1600')
+                center/cover;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 550px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            color: #f45bc8;
+            line-height: 1.2;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(90deg, #ec48b5, #b34de9);
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+        }
+
+        /* ส่วนเนื้อหา */
+        .container {
+            padding: 30px 4%;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .section-title span {
+            color: #df42ad;
+        }
+
+        /* คลาสเรียน */
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px #d7b4d4;
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .course-info {
+            padding: 15px;
+        }
+
+        .course-info h3 {
+            font-size: 19px;
+        }
+
+        .course-info p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* โปรโมชั่น */
+        .promotion {
+            margin-top: 30px;
+            padding: 35px;
+            border-radius: 20px;
+            color: white;
+            background: linear-gradient(120deg, #a32e9d, #ed62c4);
+            text-align: center;
+        }
+
+        .promotion h2 {
+            font-size: 30px;
+        }
+
+        .promotion h1 {
+            font-size: 55px;
+        }
+
+        /* ข่าวสาร */
+        .news {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .news-card {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .news-card img {
+            width: 40%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .news-card h3 {
+            font-size: 17px;
+        }
+
+        .news-card p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* ส่วนท้าย */
+        footer {
+            background: #1b1025;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+        }
+
+        /* Responsive มือถือ */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            .hero {
+                padding: 60px 6%;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .courses {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .news {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .courses {
+                grid-template-columns: 1fr;
+            }
+
+            .news-card {
+                flex-direction: column;
+            }
+
+            .news-card img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- เมนู -->
+    <header>
+        <div class="logo">⭐ STEP UP</div>
+
+        <nav>
+            <a href="#">หน้าหลัก</a>
+            <a href="#courses">คลาสเรียน</a>
+            <a href="#news">ข่าวสาร</a>
+            <a href="#promotion">โปรโมชั่น</a>
+            <a href="#contact">ติดต่อเรา</a>
+        </nav>
+
+        <button class="login" onclick="alert('ยินดีต้อนรับสู่ STEP UP!')">
+            เข้าสู่ระบบ
+        </button>
+    </header>
+
+    <!-- แบนเนอร์หลัก -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Step Up</h1>
+            <h2>DANCE STUDIO</h2>
+
+            <p>
+                "Step Up Your Move, Shine Your Way."
+                <br><br>
+                ก้าวไปกับทุกจังหวะ เปล่งประกายในแบบของคุณ
+                สตูดิโอสอนเต้นคุณภาพ พร้อมพาคุณก้าวสู่เวทีในแบบที่เป็นคุณ
+            </p>
+
+            <a href="#courses" class="btn">รู้จักเราเพิ่มเติม →</a>
+        </div>
+    </section>
+
+    <!-- คลาสเรียนยอดนิยม -->
+    <section class="container" id="courses">
+
+        <h2 class="section-title">
+            ⭐ คลาสยอดนิยม
+        </h2>
+
+        <div class="courses">
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1547153760-18fc86324498?w=600" alt="K-POP Dance">
+
+                <div class="course-info">
+                    <h3>K-POP Cover Dance</h3>
+                    <p>เรียนเต้นตามเพลงฮิตจากเกาหลี</p>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=600" alt="Hip Hop">
+
+                <div class="course-info">
+                    <h3>Hip-Hop Dance</h3>
+                    <p>ปลดปล่อยพลังกับสไตล์ฮิปฮอป</p>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600" alt="Kids Dance">
+
+                <div class="course-info">
+                    <h3>Kids Dance</h3>
+                    <p>สนุกกับการเต้นสำหรับเด็ก ๆ</p>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600" alt="Basic Dance">
+
+                <div class="course-info">
+                    <h3>Basic Dance</h3>
+                    <p>เริ่มต้นได้ แม้ไม่มีพื้นฐาน</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- โปรโมชั่น -->
+    <section class="container" id="promotion">
+        <div class="promotion">
+
+            <h2>🎉 โปรโมชั่นพิเศษ</h2>
+            <p>สมัครเรียนวันนี้ รับส่วนลดพิเศษ</p>
+            <h1>10%</h1>
+            <p>สำหรับสมาชิกใหม่</p>
+
+            <br>
+
+            <a href="#contact" class="btn">จองเลย →</a>
+
+        </div>
+    </section>
+
+    <!-- ข่าวสาร -->
+    <section class="container" id="news">
+
+        <h2 class="section-title">
+            📢 ข่าวสารและอัปเดตล่าสุด
+        </h2>
+
+        <div class="news">
+
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=600" alt="Dance Studio">
+
+                <div>
+                    <h3>เปิดสอนคลาสใหม่!</h3>
+                    <p>มาเรียนรู้และสนุกไปกับการเต้นได้แล้ววันนี้</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600" alt="Dance Show">
+
+                <div>
+                    <h3>รีวิวบรรยากาศคลาสเรียน</h3>
+                    <p>สนุกกับการเต้นและพัฒนาทักษะไปด้วยกัน</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ติดต่อ -->
+    <footer id="contact">
+        <h2>STEP UP DANCE STUDIO</h2>
+        <p>Dance More, Be Happy ❤️</p>
+        <p>Facebook | Instagram | TikTok</p>
+        <p>© 2026 STEP UP DANCE STUDIO</p>
+    </footer>
+
+</body>
+</html>
